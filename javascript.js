@@ -16,36 +16,42 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection == 'Rock' && computerSelection == 'Paper') {
         // return "You Lose! Paper beats Rock";
         setResults("You Lose! Paper beats Rock", "red");
-        computerScore++;
+        // computerScore++;
+        updateScore("computer");
     }
     else if (playerSelection == 'Rock' && computerSelection == 'Scissors') {
         // return "You Win! Rock beats Scissors!";
         setResults("You Win! Rock beats Scissors!", "green");
-        userScore++;
+        // userScore++;
+        updateScore("user")
     }
     
     else if (playerSelection == 'Scissors' && computerSelection == 'Paper') {
         // return "You Win! Scissors beats Paper!";
         setResults("You Win! Scissors beats Paper!", "green");
-        userScore++;
+        // userScore++;
+        updateScore("user")
     }
 
     else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
         // return "You Lose! Rock beats Scissors!";
         setResults("You Lose! Rock beats Scissors!", "red");
-        computerScore++;
+        // computerScore++;
+        updateScore("computer")
     }
 
     else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
         // return "You Lose! Scissors beats Paper!";
         setResults("You Lose! Scissors beats Paper!", "red");
-        computerScore++;
+        // computerScore++;
+        updateScore("computer")
     }
 
     else if (playerSelection == 'Paper' && computerSelection == 'Rock') {
         // return "You Win! Paper beats Rock!";
         setResults("You Win! Paper beats Rock!", "green");
-        userScore++;
+        // userScore++;
+        updateScore("user")
     }
 
     else {
@@ -65,10 +71,10 @@ function setResults(entry, colour) {
 
 function updateScore(winner) {
     const player = winner;
-    const userLabel = document.getElementById('userLabel');
-    const computerLabel = document.getElementById('computerLabel');
+    const userLabel = document.getElementById('userScore');
+    const computerLabel = document.getElementById('computerScore');
     
-    if (winner == "user") {
+    if (player == "user") {
         userScore++;
         userLabel.textContent = userScore;
     }
