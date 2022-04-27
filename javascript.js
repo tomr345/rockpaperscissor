@@ -85,15 +85,21 @@ function updateScore(winner) {
 } 
 
 function game() {
-    const buttons = document.querySelectorAll('button');
+        const buttons = document.querySelectorAll('button');
 
-    buttons.forEach((button) => {
-        button.addEventListener('click', function (e) {
-            playRound(e.target.id, computerPlay());
+        buttons.forEach((button) => {
+            button.addEventListener('click', function (e) {
+                if (userScore == 5) {
+                    alert('PLAYER 1 WINS!');
+                }
+                else if (computerScore == 5) {
+                    alert('PLAYER 2 WINS!');
+                }
+                else {
+                    playRound(e.target.id, computerPlay());
+                }
+            })
         })
-    })
-
-    
     // for (let i = 0; i < 5; i++) {
     //     // const userInput = prompt('Choose Rock, Paper or Scissors: ');
     //     console.log(playRound(userInput, computerPlay()));
